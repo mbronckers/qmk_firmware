@@ -101,7 +101,7 @@ void matrix_init_user(void) {
     #endif
 }
 
-# ifdef OLED_ENABLE
+#ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_270; }
 
 void render_space(void) {
@@ -259,7 +259,7 @@ void render_layer_state(void) {
         0x20, 0xb7, 0xb8, 0xb9, 0x20,
         0x20, 0xd7, 0xd8, 0xd9, 0x20, 0};
     static const char PROGMEM lower_layer[] = {
-        0x20, 0x9a, 0x9b, 0sx9c, 0x20,
+        0x20, 0x9a, 0x9b, 0x9c, 0x20,
         0x20, 0xba, 0xbb, 0xbc, 0x20,
         0x20, 0xda, 0xdb, 0xdc, 0x20, 0};
     static const char PROGMEM adjust_layer[] = {
@@ -318,17 +318,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           layer_off(_ADJUST);
         }
         return false;
-    case KC_RACL:
-        if (record->event.pressed) {
-          my_colon_timer = timer_read();
-          register_code(KC_RALT);
-        } else {
-          unregister_code(KC_RALT);
-          if (timer_elapsed(my_colon_timer) < TAPPING_TERM) {
-            SEND_STRING(":"); // Change the character(s) to be sent on tap here
-          }
-        }
-        return false;
+    // case KC_RACL:
+    //     if (record->event.pressed) {
+    //       my_colon_timer = timer_read();
+    //       register_code(KC_RALT);
+    //     } else {
+    //       unregister_code(KC_RALT);
+    //       if (timer_elapsed(my_colon_timer) < TAPPING_TERM) {
+    //         SEND_STRING(":"); // Change the character(s) to be sent on tap here
+    //       }
+    //     }
+    //     return false;
     case RGBRST:
       #ifdef RGBLIGHT_ENABLE
         if (record->event.pressed) {
