@@ -35,15 +35,15 @@ enum custom_keycodes {
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_QWERTY] = LAYOUT_split_3x6_3( 
+  [_QWERTY] = LAYOUT_split_3x6_3(
   //,-----------------------------------------.                ,---------------------------------------------.
      KC_TAB,  KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,                   KC_Y,  KC_U,  KC_I,  KC_O,  KC_P,  KC_BSPC,
   //|------+------+------+------+------+------|                |------+------+-------+------+-------+--------|
     KC_LCTL,  KC_A,  KC_S,  KC_D,  KC_F,  KC_G,                   KC_H,  KC_J,  KC_K,  KC_L, KC_SCLN,KC_QUOT,
   //|------+------+------+------+------+------|                |------+------+-------+------+-------+--------|
-    SC_LSPO,  KC_Z,  KC_X,  KC_C,  KC_V,  KC_B,                   KC_N,  KC_M,KC_COMM,KC_DOT,KC_SLSH,SC_RSPC,
+    SC_LSPO,  KC_Z,  KC_X,  KC_C,  KC_V,  KC_B,                   KC_N,  KC_M,KC_COMM,KC_DOT,KC_SLSH, KC_ESC,
   //|------+------+------+------+------+------+------|  |------+------+------+-------+------+-------+--------|
-                               KC_LGESC,LOWER, KC_SPC,   RCTL_T(KC_ENT), RAISE, KC_RACL
+                               KC_LGUI,LOWER, KC_SPC,   RCTL_T(KC_ENT), RAISE, KC_RALT
                               //`--------------------'  `--------------------'
   ),
 
@@ -101,7 +101,7 @@ void matrix_init_user(void) {
     #endif
 }
 
-#ifdef OLED_ENABLE
+# ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_270; }
 
 void render_space(void) {
@@ -259,7 +259,7 @@ void render_layer_state(void) {
         0x20, 0xb7, 0xb8, 0xb9, 0x20,
         0x20, 0xd7, 0xd8, 0xd9, 0x20, 0};
     static const char PROGMEM lower_layer[] = {
-        0x20, 0x9a, 0x9b, 0x9c, 0x20,
+        0x20, 0x9a, 0x9b, 0sx9c, 0x20,
         0x20, 0xba, 0xbb, 0xbc, 0x20,
         0x20, 0xda, 0xdb, 0xdc, 0x20, 0};
     static const char PROGMEM adjust_layer[] = {
