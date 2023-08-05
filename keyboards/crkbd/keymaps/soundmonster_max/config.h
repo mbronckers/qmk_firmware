@@ -64,13 +64,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 #ifdef RGB_MATRIX_ENABLE
-#   define RGB_MATRIX_KEYPRESSES // reacts to keypresses
+#    define RGB_TRIGGER_ON_KEYDOWN // might not work on some boards!
+#    define RGB_MATRIX_KEYPRESSES  // reacts to keypresses
 // #   define RGB_MATRIX_KEYRELEASES // reacts to keyreleases (instead of keypresses)
 #   define RGB_DISABLE_WHEN_USB_SUSPENDED // turn off effects when suspended
 #   define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #   define RGB_MATRIX_LED_PROCESS_LIMIT (RGB_MATRIX_LED_COUNT + 4) / 5 // limits the number of LEDs to process in an animation per task run (increases keyboard responsiveness)
 #   define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
-#   define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150 // limits maximum brightness of LEDs to 150 out of 255. Higher may cause the controller to crash.
+#   define RGB_MATRIX_MAXIMUM_BRIGHTNESS 160 // limits maximum brightness of LEDs to 150 out of 255. Higher may cause the controller to crash.
 #   define RGB_MATRIX_HUE_STEP 8
 #   define RGB_MATRIX_SAT_STEP 8
 #   define RGB_MATRIX_VAL_STEP 8
@@ -83,7 +84,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    undef ENABLE_RGB_MATRIX_BREATHING
 #    undef ENABLE_RGB_MATRIX_BAND_SAT
 #    undef ENABLE_RGB_MATRIX_BAND_VAL
-#   define ENABLE_RGB_MATRIX_BAND_PINWHEEL_SAT
+#    undef ENABLE_RGB_MATRIX_BAND_PINWHEEL_SAT
 #    undef ENABLE_RGB_MATRIX_BAND_PINWHEEL_VAL
 #    undef ENABLE_RGB_MATRIX_BAND_SPIRAL_SAT
 #    undef ENABLE_RGB_MATRIX_BAND_SPIRAL_VAL
@@ -92,7 +93,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    undef ENABLE_RGB_MATRIX_CYCLE_UP_DOWN
 #    undef ENABLE_RGB_MATRIX_CYCLE_OUT_IN
 #    undef ENABLE_RGB_MATRIX_CYCLE_OUT_IN_DUAL
-#   define ENABLE_RGB_MATRIX_RAINBOW_MOVING_CHEVRON
+#    define ENABLE_RGB_MATRIX_RAINBOW_MOVING_CHEVRON
 #    undef ENABLE_RGB_MATRIX_DUAL_BEACON
 #    undef ENABLE_RGB_MATRIX_CYCLE_PINWHEEL
 #    undef ENABLE_RGB_MATRIX_CYCLE_SPIRAL
@@ -100,8 +101,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    undef ENABLE_RGB_MATRIX_RAINBOW_PINWHEELS
 #    undef ENABLE_RGB_MATRIX_RAINDROPS
 #    undef ENABLE_RGB_MATRIX_JELLYBEAN_RAINDROPS
-#   define ENABLE_RGB_MATRIX_TYPING_HEATMAP
-#   define ENABLE_RGB_MATRIX_DIGITAL_RAIN
+#    define ENABLE_RGB_MATRIX_TYPING_HEATMAP
+#    define ENABLE_RGB_MATRIX_DIGITAL_RAIN
 #    undef ENABLE_RGB_MATRIX_SOLID_REACTIVE
 #    undef ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE
 #    undef ENABLE_RGB_MATRIX_SOLID_REACTIVE_WIDE
@@ -111,7 +112,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    undef ENABLE_RGB_MATRIX_SOLID_REACTIVE_NEXUS
 #    undef ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTINEXUS
 #    undef ENABLE_RGB_MATRIX_SPLASH
-#   define ENABLE_RGB_MATRIX_MULTISPLASH
+#    undef ENABLE_RGB_MATRIX_MULTISPLASH
 #    undef ENABLE_RGB_MATRIX_SOLID_SPLASH
 #    undef ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
 #endif
