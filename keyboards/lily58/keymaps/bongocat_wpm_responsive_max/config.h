@@ -25,8 +25,10 @@
  /* Select hand configuration */
 
  // #define MASTER_LEFT
- #define MASTER_LEFT
- // #define EE_HANDS
+//  #define MASTER_RIGHT
+//  #define EE_HANDS
+#define SPLIT_USB_DETECT
+#define SPLIT_WATCHDOG_ENABLE
 
  #define QUICK_TAP_TERM 0
  #define TAPPING_TERM 200
