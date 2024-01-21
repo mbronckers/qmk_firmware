@@ -20,7 +20,7 @@
 
  #pragma once
 
- //#define USE_MATRIX_I2C
+//#define USE_MATRIX_I2C
 
  /* Select hand configuration */
 
@@ -29,6 +29,7 @@
 //  #define EE_HANDS
 #define SPLIT_USB_DETECT
 #define SPLIT_WATCHDOG_ENABLE
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
  #define QUICK_TAP_TERM 0
  #define TAPPING_TERM 200
